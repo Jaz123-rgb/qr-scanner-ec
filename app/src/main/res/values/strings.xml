@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ScanTwo</string>
+    <string name="todo">Your TODO text here</string>
+    <string name="register_entry">Register Entry</string>
+    <string name="register_exit">Register Exit</string>
+    <string name="scan_a_barcode">Scan a barcode</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="no_id_scanned">No ID scanned</string>
+    <string name="camera_permission_required">Camera permission is required</string>
+    <string name="allow_camera_permission">Please allow camera permission</string>
+</resources>
