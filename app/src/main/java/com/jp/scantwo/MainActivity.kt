@@ -1,4 +1,3 @@
-// MainActivity.kt
 package com.jp.scantwo
 
 import android.Manifest
@@ -67,9 +66,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        binding.fab.setOnClickListener {
-            checkCameraPermission()
-        }
         binding.buttonEntry.setOnClickListener {
             scanAction = "entry"
             checkCameraPermission()
@@ -132,7 +128,7 @@ class MainActivity : AppCompatActivity() {
     private fun displayUserInfo(message: String, nombre: String) {
         val userInfo = "Nombre: $nombre"
         runOnUiThread {
-            binding.textStatus.text = "$message\n$userInfo"
+            binding.textResult.text = "$message\n$userInfo"
         }
     }
 }
