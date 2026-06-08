@@ -5,62 +5,203 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/on26_white"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/layout_result"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
+    <!-- Tag + título -->
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:contentDescription="@string/scan_a_barcode"
-            android:src="@drawable/qrcode_scanner"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:orientation="vertical"
+        android:layout_margin="24dp">
 
         <TextView
-            android:id="@+id/textResult"
-            android:layout_marginTop="16dp"
-            android:textSize="26sp"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:text="SCANNER_001"
+            android:background="@color/on26_yellow"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textColor="@color/on26_black"
+            android:fontFamily="@font/ibm_plex_mono_medium"
+            android:textSize="10sp"
+            android:letterSpacing="0.12"/>
 
         <TextView
-            android:id="@+id/textStatus"
-            android:layout_marginTop="16dp"
-            android:textSize="18sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:text="CHECK-\nIN."
+            android:textAppearance="@style/TextAppearance.ON26.Display"
+            android:lineSpacingMultiplier="0.88"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <!-- Logout -->
+    <Button
         android:id="@+id/buttonLogout"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
-        android:layout_margin="8dp"
-        android:text="@string/logout"
-        android:textColor="@color/white"/>
+        android:layout_margin="24dp"
+        android:text="SALIR"
+        android:background="@null"
+        android:textColor="@color/on26_gray_border"
+        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:textSize="11sp"
+        android:letterSpacing="0.08"
+        android:stateListAnimator="@null"/>
 
+    <!-- Contenido central -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <!-- Card resultado -->
+        <LinearLayout
+            android:id="@+id/cardResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@drawable/input_border"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            tools:visibility="visible">
+
+            <!-- Tag RESULTADO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESULTADO"
+                android:background="@color/on26_yellow"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:fontFamily="@font/ibm_plex_mono_medium"
+                android:textSize="10sp"
+                android:textColor="@color/on26_black"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.ON26.Button"
+                android:textSize="24sp"
+                android:textColor="@color/on26_black"
+                android:layout_marginBottom="4dp"
+                tools:text="JUAN PÉREZ"/>
+
+            <!-- Tag servidor (visible solo si is_servidor = true) -->
+            <TextView
+                android:id="@+id/tagServidor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SERVIDOR"
+                android:background="@color/on26_black"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:fontFamily="@font/ibm_plex_mono_medium"
+                android:textSize="10sp"
+                android:textColor="@color/on26_white"
+                android:letterSpacing="0.12"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/on26_gray_border"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Status check-in -->
+            <TextView
+                android:id="@+id/textStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ibm_plex_mono_medium"
+                android:textSize="12sp"
+                android:letterSpacing="0.04"
+                android:layout_marginBottom="4dp"
+                tools:text="✓ CHECK-IN REGISTRADO"
+                tools:textColor="@color/on26_black"/>
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ibm_plex_mono_medium"
+                android:textSize="11sp"
+                android:textColor="@color/on26_black"
+                android:alpha="0.55"
+                android:layout_marginBottom="14dp"
+                tools:text="08/06/2026  18:30"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/on26_gray_border"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Iglesia -->
+            <include layout="@layout/item_info_row"
+                android:id="@+id/rowChurch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Correo -->
+            <include layout="@layout/item_info_row"
+                android:id="@+id/rowMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Teléfono -->
+            <include layout="@layout/item_info_row"
+                android:id="@+id/rowPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Pago -->
+            <include layout="@layout/item_info_row"
+                android:id="@+id/rowPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!-- Hint -->
+        <TextView
+            android:id="@+id/textHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scan_hint"
+            android:fontFamily="@font/ibm_plex_mono_medium"
+            android:textColor="@color/on26_gray_border"
+            android:textSize="12sp"
+            android:letterSpacing="0.04"/>
+    </LinearLayout>
+
+    <!-- Barra inferior -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/on26_white"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="10dp"
         tools:ignore="VisualLintBottomAppBar"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/buttonContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -68,24 +209,19 @@
         app:layout_anchor="@id/bottomAppBar"
         app:layout_anchorGravity="center_horizontal|top">
 
+        <!-- Botón primario: on26_black fondo, on26_white texto -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonEntry"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/black"
+            android:id="@+id/buttonScan"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:background="@drawable/circular_button"
+            android:backgroundTint="@color/on26_black"
             android:padding="0dp"
-            android:text="@string/register_entry"
-            android:textSize="14sp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonExit"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:background="@drawable/circular_button"
-            android:padding="0dp"
-            android:text="@string/register_exit"
-            android:textSize="14sp"/>
+            android:text="@string/scan_button"
+            android:textColor="@color/on26_white"
+            android:textSize="10sp"
+            android:fontFamily="@font/barlow_condensed_black"
+            android:letterSpacing="0.06"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

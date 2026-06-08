@@ -8,7 +8,7 @@
     <string name="no_id_scanned">No ID scanned</string>
     <string name="camera_permission_required">Camera permission is required</string>
     <string name="allow_camera_permission">Please allow camera permission</string>
-    <string name="login_title">Acceso Administrador</string>
+    <string name="login_title">Acceso</string>
     <string name="email_hint">Correo electrónico</string>
     <string name="password_hint">Contraseña</string>
     <string name="login_button">Iniciar sesión</string>
@@ -17,4 +17,9 @@
     <string name="login_error">Error al iniciar sesión</string>
     <string name="invalid_credentials">Credenciales incorrectas</string>
     <string name="connection_error">Error de conexión. Verifica tu internet</string>
+    <string name="scan_button">Escanear</string>
+    <string name="scan_hint">Apunta al código QR de la pulsera</string>
+    <string name="checkin_success">✓ Check-in registrado</string>
+    <string name="checkin_error">Error al registrar check-in</string>
+    <string name="already_checked_in">Ya realizó check-in anteriormente</string>
 </resources>

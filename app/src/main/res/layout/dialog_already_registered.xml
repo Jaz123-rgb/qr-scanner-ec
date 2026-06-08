@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Banner amarillo superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/on26_yellow"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="!"
+            android:fontFamily="@font/barlow_condensed_black"
+            android:textSize="32sp"
+            android:textColor="@color/on26_black"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADVERTENCIA"
+                android:fontFamily="@font/ibm_plex_mono_medium"
+                android:textSize="10sp"
+                android:textColor="@color/on26_black"
+                android:letterSpacing="0.12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QR NO VÁLIDO"
+                android:fontFamily="@font/barlow_condensed_black"
+                android:textSize="22sp"
+                android:textColor="@color/on26_black"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Cuerpo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/on26_white"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USUARIO YA REGISTRADO"
+            android:fontFamily="@font/barlow_condensed_black"
+            android:textSize="18sp"
+            android:textColor="@color/on26_black"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/dialogName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ibm_plex_mono_medium"
+            android:textSize="14sp"
+            android:textColor="@color/on26_black"
+            android:alpha="0.7"
+            android:layout_marginBottom="16dp"
+            tools:text="Juan Pérez"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/on26_gray_border"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No se puede volver a usar\nel mismo QR."
+            android:fontFamily="@font/ibm_plex_mono_medium"
+            android:textSize="13sp"
+            android:textColor="@color/on26_black"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/dialogTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ibm_plex_mono_medium"
+            android:textSize="11sp"
+            android:textColor="@color/on26_black"
+            android:alpha="0.45"
+            android:layout_marginBottom="20dp"
+            tools:text="Check-in original: 08/06/2026 18:30"/>
+
+        <!-- Botón -->
+        <Button
+            android:id="@+id/dialogBtnClose"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="ENTENDIDO"
+            android:backgroundTint="@color/on26_black"
+            android:textColor="@color/on26_white"
+            android:fontFamily="@font/barlow_condensed_black"
+            android:textSize="16sp"
+            android:letterSpacing="0.08"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="4dp"/>
+
+    </LinearLayout>
+</LinearLayout>

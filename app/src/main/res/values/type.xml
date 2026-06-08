@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.ON26" parent="TextAppearance.MaterialComponents.Body1"/>
+
+    <style name="TextAppearance.ON26.Display" parent="TextAppearance.ON26">
+        <item name="fontFamily">@font/barlow_condensed_black</item>
+        <item name="android:textSize">56sp</item>
+        <item name="android:textColor">@color/on26_black</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.ON26.Label" parent="TextAppearance.ON26">
+        <item name="fontFamily">@font/ibm_plex_mono_medium</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/on26_black</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+    <style name="TextAppearance.ON26.Input" parent="TextAppearance.ON26">
+        <item name="fontFamily">@font/ibm_plex_mono_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/on26_black</item>
+    </style>
+
+    <style name="TextAppearance.ON26.Button" parent="TextAppearance.ON26">
+        <item name="fontFamily">@font/barlow_condensed_black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+</resources>

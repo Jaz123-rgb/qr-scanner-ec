@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.ScanTwo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primario → on26_black: botones, checkboxes, switches -->
+        <item name="colorPrimary">@color/on26_black</item>
+        <item name="colorPrimaryVariant">@color/on26_black</item>
+        <item name="colorOnPrimary">@color/on26_white</item>
 
-    <style name="Theme.ScanTwo" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+        <!-- Secundario → on26_yellow: FAB, acento -->
+        <item name="colorSecondary">@color/on26_yellow</item>
+        <item name="colorSecondaryVariant">@color/on26_yellow</item>
+        <item name="colorOnSecondary">@color/on26_black</item>
+
+        <!-- Fondo y superficie -->
+        <item name="android:colorBackground">@color/on26_white</item>
+        <item name="colorSurface">@color/on26_white</item>
+        <item name="colorOnSurface">@color/on26_black</item>
+        <item name="colorOnBackground">@color/on26_black</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/on26_error</item>
+        <item name="colorOnError">@color/on26_white</item>
+
+        <!-- Texto del sistema -->
+        <item name="android:textColorPrimary">@color/on26_black</item>
+        <item name="android:textColorSecondary">@color/on26_gray_border</item>
+        <item name="android:textColorHint">@color/on26_gray_border</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/on26_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

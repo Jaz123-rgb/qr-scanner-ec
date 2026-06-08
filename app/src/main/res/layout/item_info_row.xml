@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/rowLabel"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:textSize="10sp"
+        android:textColor="@color/on26_black"
+        android:alpha="0.4"
+        android:letterSpacing="0.1"
+        tools:text="IGLESIA"/>
+
+    <TextView
+        android:id="@+id/rowValue"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_mono_medium"
+        android:textSize="12sp"
+        android:textColor="@color/on26_black"
+        tools:text="Iglesia Gracia"/>
+
+</LinearLayout>

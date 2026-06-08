@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.jp.scantwo.databinding.ActivityLoginBinding
 import kotlinx.coroutines.launch
@@ -25,12 +26,12 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonLogin.setOnClickListener { attemptLogin() }
+        binding.btnLogin.setOnClickListener { attemptLogin() }
     }
 
     private fun attemptLogin() {
-        val email = binding.editEmail.text?.toString()?.trim().orEmpty()
-        val password = binding.editPassword.text?.toString().orEmpty()
+        val email = binding.etEmail.text?.toString()?.trim().orEmpty()
+        val password = binding.etPassword.text?.toString().orEmpty()
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show()
@@ -62,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        binding.buttonLogin.isEnabled = !isLoading
+        binding.btnLogin.isEnabled = !isLoading
     }
 
     private fun saveToken(token: String) {
