@@ -1,6 +1,7 @@
 package com.jp.scantwo
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -73,6 +74,11 @@ class MainActivity : AppCompatActivity() {
         binding.buttonExit.setOnClickListener {
             scanAction = "exit"
             checkCameraPermission()
+        }
+        binding.buttonLogout.setOnClickListener {
+            LoginActivity.clearToken(this)
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 

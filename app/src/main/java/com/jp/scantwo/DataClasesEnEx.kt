@@ -1,53 +1,45 @@
 package com.jp.scantwo
 
-// EntryExitRequest.kt
-data class EntryExitRequest(
-    val uniqueIdPayment: String,
-    val action: String
+import com.google.gson.annotations.SerializedName
+
+// --- Auth ---
+data class LoginRequest(
+    val email: String,
+    val password: String
 )
 
-// EntryExitResponse.kt
-data class EntryExitResponse(
+data class LoginResponse(
+    val status: Int,
     val message: String,
-    val time: String,
-    val user: User
+    val data: LoginData?,
+    val error: String?
 )
 
-data class User(
-    val id: String,
-    val createdAt: String,
-    val updatedAt: String,
-    val nombre: String,
-    val correo: String,
-    val nombreLider: String,
-    val edad: Int,
-    val genero: String,
-    val rol: String,
-    val pago: Double,
-    val originStatus: String,
-    val estado: String,
-    val cburchOrigin: String,
-    val password: String,
-    val telefono: String,
-    val history: List<History>,
-    val historyCount: Int,
-    val finalState: FinalState
+data class LoginData(
+    val token: String,
+    val user: AuthUser
 )
 
-data class History(
-    val id: String,
-    val updatedAt: String,
-    val action: String,
-    val total: Double,
-    val added: Double,
-    val note: String,
-    val previousTotal: Double
+data class AuthUser(
+    val id: Long,
+    val uuid: String,
+    val username: String,
+    val email: String,
+    val role: String,
+    @SerializedName("is_active") val isActive: Boolean
 )
 
-data class FinalState(
-    val id: String,
-    val datee: String,
-    val uniqueIdPayment: String,
-    val status: String,
-    val entryExitTime: String
+// --- Check-in ---
+data class CheckInResponse(
+    val status: Int,
+    val message: String,
+    val data: CheckInData?,
+    val error: String?
+)
+
+data class CheckInData(
+    val uuid: String,
+    @SerializedName("full_name") val fullName: String,
+    @SerializedName("is_check_in") val isCheckIn: Boolean,
+    @SerializedName("checked_in_at") val checkedInAt: String?
 )

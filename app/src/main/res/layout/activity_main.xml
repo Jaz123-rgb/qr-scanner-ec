@@ -38,6 +38,16 @@
             android:layout_width="wrap_content"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLogout"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:text="@string/logout"
+        android:textColor="@color/white"/>
+
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"

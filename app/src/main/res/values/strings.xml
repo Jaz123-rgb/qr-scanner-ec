@@ -8,4 +8,13 @@
     <string name="no_id_scanned">No ID scanned</string>
     <string name="camera_permission_required">Camera permission is required</string>
     <string name="allow_camera_permission">Please allow camera permission</string>
+    <string name="login_title">Acceso Administrador</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="fill_all_fields">Completa todos los campos</string>
+    <string name="login_error">Error al iniciar sesión</string>
+    <string name="invalid_credentials">Credenciales incorrectas</string>
+    <string name="connection_error">Error de conexión. Verifica tu internet</string>
 </resources>

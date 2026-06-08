@@ -2,9 +2,17 @@ package com.jp.scantwo
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiEntryExit {
-    @POST("registerEntryExit")
-    suspend fun registerEntryExit(@Body requestBody: EntryExitRequest): Response<EntryExitResponse>
+    @POST("api/auth/login")
+    suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+
+    @POST("api/user-events/{uuid}/check-in")
+    suspend fun checkIn(
+        @Header("Authorization") authToken: String,
+        @Path("uuid") uuid: String
+    ): Response<CheckInResponse>
 }

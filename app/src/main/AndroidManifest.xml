@@ -18,16 +18,20 @@
         android:theme="@style/Theme.ScanTwo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ScanTwo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ScanTwo"/>
         <activity android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="sensor"
             tools:replace="android:screenOrientation" />
