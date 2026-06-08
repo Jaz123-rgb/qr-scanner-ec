@@ -19,6 +19,7 @@ import android.widget.TextView
 import com.google.gson.Gson
 import com.jp.scantwo.databinding.ActivityMainBinding
 import com.jp.scantwo.databinding.ItemInfoRowBinding
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -100,7 +101,12 @@ class MainActivity : AppCompatActivity() {
                             Log.e("CheckIn", "parse error: ${ex.message}")
                             null
                         }
-                        showAlreadyCheckedIn(data)
+                        try {
+                            showAlreadyCheckedIn(data)
+                        } catch (ex: Exception) {
+                            Log.e("CheckIn", "dialog error: ${ex.javaClass.simpleName} — ${ex.message}", ex)
+                            showResult(getString(R.string.already_checked_in))
+                        }
                     }
                     401 -> {
                         LoginActivity.clearToken(this@MainActivity)
@@ -112,7 +118,10 @@ class MainActivity : AppCompatActivity() {
                         showResult(getString(R.string.checkin_error))
                     }
                 }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
+                Log.e("CheckIn", "outer catch: ${e.javaClass.simpleName} — ${e.message}", e)
                 showResult(getString(R.string.connection_error))
             } finally {
                 binding.buttonScan.isEnabled = true
@@ -169,11 +178,13 @@ class MainActivity : AppCompatActivity() {
             .create()
 
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        (dialogView.findViewById<android.widget.Button>(R.id.dialogBtnClose)).setOnClickListener {
+        dialogView.findViewById<android.widget.Button>(R.id.dialogBtnClose).setOnClickListener {
             dialog.dismiss()
             if (data != null) showSuccess(data) else binding.cardResult.visibility = View.GONE
         }
-        dialog.show()
+        if (!isFinishing && !isDestroyed) {
+            dialog.show()
+        }
     }
 
     private fun showResult(status: String) {
