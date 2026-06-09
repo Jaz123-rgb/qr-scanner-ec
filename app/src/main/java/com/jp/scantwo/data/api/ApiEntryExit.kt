@@ -1,5 +1,8 @@
-package com.jp.scantwo
+package com.jp.scantwo.data.api
 
+import com.jp.scantwo.data.model.CheckInResponse
+import com.jp.scantwo.data.model.LoginRequest
+import com.jp.scantwo.data.model.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Header

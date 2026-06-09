@@ -1,4 +1,4 @@
-package com.jp.scantwo
+package com.jp.scantwo.data.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.jp.scantwo
+package com.jp.scantwo.ui.login
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.jp.scantwo.R
+import com.jp.scantwo.data.api.RetrofitClient
+import com.jp.scantwo.data.model.LoginRequest
 import com.jp.scantwo.databinding.ActivityLoginBinding
+import com.jp.scantwo.ui.main.MainActivity
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {

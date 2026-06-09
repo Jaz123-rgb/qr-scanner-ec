@@ -1,5 +1,4 @@
-// RetrofitClient.kt
-package com.jp.scantwo
+package com.jp.scantwo.data.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
